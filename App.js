@@ -1,9 +1,9 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 
-import Navebar from './Componentes/BarraTitulo/index'
-import Boxator from './Componentes/Card/index'
-import Aboutator from './Componentes/Sobre/index'
+import Navebar from './Componentes/BarraTitulo'
+import Boxator from './Componentes/Card'
+import Aboutator from './Componentes/Sobre'
 
 export default function App() {
   return (
