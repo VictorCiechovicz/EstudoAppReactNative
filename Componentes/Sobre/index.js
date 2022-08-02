@@ -1,9 +1,10 @@
-import React from 'react'
-import { Text, View, Image } from 'react-native'
+import React, { useState } from 'react'
+import { Text, View, Image, Button } from 'react-native'
 import estilos from './estilos'
 import Filme from '../../assets/Filme.png'
 
 export default function Aboutator() {
+  const [states, setStates] = useState(true)
   return (
     <View style={estilos.about}>
       <Text style={estilos.aboutTitulo}>Sobre o Ator</Text>
@@ -21,7 +22,16 @@ export default function Aboutator() {
       <Text style={estilos.paragrafo}>
         Seu primeiro filme se chama Together for Days que estreou em 1972.
       </Text>
-      <Image source={Filme} style={estilos.imagemFilme} />
+      {states ? (
+        <Text style={estilos.subtitulo}>******</Text>
+      ) : (
+        <Image source={Filme} style={estilos.imagemFilme} />
+      )}
+
+      <Button
+        title={states ? 'Mostrar Imagem' : 'Desligar'}
+        onPress={() => setStates(!states)}
+      />
     </View>
   )
 }
